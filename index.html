@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Search App</title>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="main" class="container fade-in">
+      <h2 class="title">GitHub Search</h2>
+      <form id="github-form" class="search-form">
+        <input
+          id="search"
+          class="search-input"
+          type="text"
+          name="search"
+          placeholder="Search GitHub users or repos..."
+          required
+        />
+        <select id="search-type" class="search-type">
+          <option value="users">Users</option>
+          <option value="repositories">Repositories</option>
+        </select>
+        <input type="submit" class="search-button" value="Search" />
+      </form>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        Loading...
+      </div>
+      <div id="error" class="error-message hidden"></div>
+      <div id="github-container" class="results-container">
+        <ul id="user-list" class="result-list"></ul>
+        <ul id="repos-list" class="result-list"></ul>
+      </div>
+      <div id="pagination" class="pagination hidden">
+        <button id="prev" class="pagination-button" disabled>Previous</button>
+        <button id="next" class="pagination-button">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
